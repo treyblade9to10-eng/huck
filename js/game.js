@@ -703,11 +703,11 @@ export function startMatch(opt) {
       cam.position.set(G.camX - far, far * 0.95, G.camZ);
       cam.lookAt(G.camX + 5, 0, G.camZ);
     } else {
-      const fx = clamp(disc.pos.x, -tot + 6, tot - 6), fz = clamp(disc.pos.z * 0.45, -W / 4, W / 4);
+      const fx = clamp(disc.pos.x, -tot + 6, tot - 6), fz = clamp(disc.pos.z * 0.7, -W / 2 + 5, W / 2 - 5);
       G.camX += (fx - G.camX) * Math.min(1, dt * 2.6); G.camZ += (fz - G.camZ) * Math.min(1, dt * 2);
       const far = (W * 0.42 + 9) * (asp < 1.4 ? 1.15 : 1);
-      cam.position.set(G.camX, far * 0.62, G.camZ - far);
-      cam.lookAt(G.camX, 0, G.camZ - W * 0.08);
+      cam.position.set(G.camX, far * 0.7, G.camZ - far);
+      cam.lookAt(G.camX, 0, G.camZ + 0.5);
     }
     // hud
     const sEl = $('stall');
